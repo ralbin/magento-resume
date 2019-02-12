@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="russellalbin" translate="label" sortOrder="110">
+            <label>RussellAlbin Extensions</label>
+        </tab>
+        <section id="russellalbin" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>separator-top</class>
+            <label>Resume</label>
+            <tab>russellalbin</tab>
+            <resource>RussellAlbin_Resume::config_resume</resource>
+            <group id="top_menu" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Category Top Navigation</label>
+                <field id="show_item" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Resume Link</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="item_text" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Link Text</label>
+                    <depends>
+                        <field id="show_item">1</field>
+                    </depends>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>

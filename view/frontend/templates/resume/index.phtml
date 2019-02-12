@@ -1,0 +1,44 @@
+<?php
+/**
+ * @var $block \RussellAlbin\Resume\Block\Resume
+ */
+
+// Get our resume, that comes from our xml file
+$xml = $block->getResumeXml();
+
+?>
+<h1>Personal Information</h1>
+<div>Name: <?php echo $xml->personal_information->full_name; ?></div>
+<div>Email: <?php echo $xml->personal_information->email; ?></div>
+<div>Cell Phone: <?php echo $xml->personal_information->cell_phone; ?></div>
+<div>Magento URL: <?php echo $xml->personal_information->magento_url; ?></div>
+<div>LinkedIn URL: <?php echo $xml->personal_information->linkedin_url; ?></div>
+<div>Skills: <?php echo $xml->personal_information->skills; ?></div>
+<div>Objective: <?php echo $xml->personal_information->objective; ?></div>
+<hr>
+<h2>Certifications</h2>
+
+    <?php foreach($xml->certifications as $_certification): ?>
+        <?php foreach($_certification as $_items): ?>
+        <div>
+                <h4><?php echo $_items->title; ?></h4>
+                <ul>
+                <?php foreach($_items as $_item): ?>
+                    <?php foreach($_item as $_cert): ?>
+                        <li>
+                            <div>Name: <?php echo $_cert->name; ?></div>
+                            <div>Date Certified: <?php echo date("F Y", strtotime($_cert->date_certified)); ?></div>
+                            <?php if(strlen($_cert->template_image)): ?>
+                                <div><img class="image-testing" src="<?php echo $block->getViewFileUrl('RussellAlbin_Resume::images/' . $_cert->template_image) ?>"></div>
+                            <?php endif; ?>
+                            <hr>
+                        </li>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>
+                </ul>
+        </div>
+        <?php endforeach; ?>
+
+    <?php endforeach; ?>
+
+

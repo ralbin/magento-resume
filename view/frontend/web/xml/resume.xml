@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<details>
+    <personal_information>
+        <full_name>Russell Albin</full_name>
+        <email>russell@russellalbin.com</email>
+        <cell_phone>402-871-5167</cell_phone>
+        <linkedin_url>https://www.linkedin.com/in/russellalbin</linkedin_url>
+        <magento_url>https://u.magento.com/certification/directory/dev/20047/</magento_url>
+        <objective>Specializing in Magento 2 and Magento Cloud</objective>
+        <skills>Magento Architect, troubleshooting, diagnosis of coding and hosting issues, all aspects of Magento developent and hosting</skills>
+    </personal_information>
+    <volunteering>
+        <roncalli_high_school>
+            <speech_final>
+                <description>Help with a panel interview for students
+                </description>
+            </speech_final>
+        </roncalli_high_school>
+    </volunteering>
+    <certifications>
+        <magento>
+            <title>Magento Certifications</title>
+            <items>
+                <magento_developer>
+                    <name>Certified Developer</name>
+                    <date_certified>2015-01-14 00:00:00</date_certified>
+                    <image>/media/magento/certification/logos/middle_developer.jpg</image>
+                    <template_image>middle_developer.jpg</template_image>
+                </magento_developer>
+                <solution_speicalist>
+                    <name>Solution Specialist</name>
+                    <date_certified>2015-04-22 00:00:00</date_certified>
+                    <image>/media/magento/certification/logos/middle_solution_specialist.jpg</image>
+                    <template_image>middle_solution_specialist.jpg</template_image>
+                </solution_speicalist>
+                <frontend_developer>
+                    <name>Front End Developer</name>
+                    <date_certified>2015-06-10 00:00:00</date_certified>
+                    <image>/media/magento/certification/logos/middle_frontend_developer.jpg</image>
+                    <template_image>middle_frontend_developer.jpg</template_image>
+                </frontend_developer>
+                <developer_plus>
+                    <name>Developer Plus</name>
+                    <date_certified>2015-08-20 00:00:00</date_certified>
+                    <image>/media/magento/certification/logos/middle_developer_plus.jpg</image>
+                    <template_image>middle_developer_plus.jpg</template_image>
+                </developer_plus>
+            </items>
+        </magento>
+        <linux_essentials>
+            <title>Linux Essentials</title>
+            <items>
+                <linux_essentials_certification>
+                    <name>Linux Essentials Certifications</name>
+                    <date_certified>2016-09-01 00:00:00</date_certified>
+                    <image />
+                    <template_image>linux-academy.png</template_image>
+                </linux_essentials_certification>
+                <comptia_cloud_essentials_certification>
+                    <name>CompTIA Cloud Essentials Certifications</name>
+                    <date_certified>2016-09-01 00:00:00</date_certified>
+                    <image />
+                    <template_image>linux-academy.png</template_image>
+                </comptia_cloud_essentials_certification>
+                <aws_concepts>
+                    <name>AWS Concepts</name>
+                    <date_certified>2016-09-01 00:00:00</date_certified>
+                    <image />
+                    <template_image>linux-academy.png</template_image>
+                </aws_concepts>
+            </items>
+        </linux_essentials>
+    </certifications>
+    <experience>
+        <blue_acorn>
+            <sort_order>0</sort_order>
+            <current>true</current>
+            <job_title>Technical Architect</job_title>
+            <job_description>Critical application support for Magento</job_description>
+            <company_name>Blue Acorn</company_name>
+            <start_date>2018-11-10 00:00:00</start_date>
+            <end_date />
+            <linkedin_logo_url />
+            <website_logo_url />
+            <website_url>https://www.blueacorn.com/</website_url>
+        </blue_acorn>
+        <rackspace>
+            <sort_order>100</sort_order>
+            <current>false</current>
+            <job_title>Application Support Architect</job_title>
+            <job_description>Critical application support for Magento</job_description>
+            <company_name>Rackspace</company_name>
+            <start_date>2016-03-01 00:00:00</start_date>
+            <end_date>2017-02-24 00:00:00</end_date>
+            <linkedin_logo_url />
+            <website_logo_url />
+            <website_url>https://www.rackspace.com/</website_url>
+        </rackspace>
+        <previous_awesome_company>
+            <sort_order>200</sort_order>
+            <current>false</current>
+            <job_title>Lead System Developer - Magento</job_title>
+            <job_description>Lead system developer - Magento</job_description>
+            <company_name>Previous Awesome company</company_name>
+            <start_date>2015-06-01 00:00:00</start_date>
+            <end_date>2016-10-31 00:00:00</end_date>
+            <linkedin_logo_url />
+            <website_logo_url />
+            <website_url>http://www.someawesomeurl.com/</website_url>
+        </previous_awesome_company>
+        <long_ago_company_name>
+            <sort_order>300</sort_order>
+            <current>false</current>
+            <job_title>Long Ago super employee</job_title>
+            <job_description>A long time ago I did some crazy cool stuff</job_description>
+            <company_name>Way Long Ago Company</company_name>
+            <start_date>1999-10-04 00:00:00</start_date>
+            <end_date>2016-06-03 00:00:00</end_date>
+            <linkedin_logo_url />
+            <website_logo_url />
+            <website_url>http://www.somelongago.org/</website_url>
+        </long_ago_company_name>
+        <tom_and_smith>
+            <sort_order>1700</sort_order>
+            <current>false</current>
+            <job_title>Contracted Magento - PHP Developer </job_title>
+            <job_description>Development of www.someoldwebsite.com  Working with the Magento E-Commerce platform, PHP, MySQL, HTML, jquery, and CSS.</job_description>
+            <company_name>Tom and Smith</company_name>
+            <start_date>2011-02-01 00:00:00</start_date>
+            <end_date>2011-03-01 00:00:00</end_date>
+            <linkedin_logo_url />
+            <website_logo_url>http://tomandsmith.com/wp-content/uploads/2016/09/ESLogo_TealGray.png</website_logo_url>
+            <website_url>http://tomandsmith.com/</website_url>
+        </tom_and_smith>
+        <sands_gaming>
+            <sort_order>1800</sort_order>
+            <current>false</current>
+            <job_title>Contractor - Software development</job_title>
+            <job_description>Actionscript 3 for their current project.  Lots and lots of AS3!</job_description>
+            <company_name>Oasis Gaming</company_name>
+            <start_date>2010-01-01 00:00:00</start_date>
+            <end_date>2010-10-10 00:00:00</end_date>
+            <linkedin_logo_url />
+            <website_logo_url>http://www.sandsgaming.com/img/Corporate_Logo.png</website_logo_url>
+            <website_url>http://www.sandsgaming.com</website_url>
+        </sands_gaming>
+    </experience>
+</details>
