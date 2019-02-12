@@ -1,0 +1,19 @@
+{
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "russellalbin/resume",
+        "version": "1.0.0",
+        "dist": {
+          "url": "https://github.com/ralbin/magento-resume/archive/master.zip",
+          "type": "zip"
+        },
+        "source": {
+          "url": "https://github.com/ralbin/magento-resume.git",
+          "type": "composer"
+        }
+      }
+    }
+  ]
+}
