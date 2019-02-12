@@ -1,5 +1,4 @@
 ## Installation instructions
-* composer config repositories.ralbin/magento-resume git git@github.com:ralbin/magento-resume.git
-* composer require ralbin/magento-resume
+* composer require russellalbin/resume dev-master
 * php bin/magento module:enable RussellAlbin_Resume
 * php bin/magento setup:upgrade
