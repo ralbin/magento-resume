@@ -1,9 +1,9 @@
 <?php
 
-namespace RussellAlbin\Api\Data;
+namespace RussellAlbin\Resume\Api\Data;
 /**
  * Interface ResumeSearchResultsInterface
- * @package RussellAlbin\Api\Data
+ * @package RussellAlbin\Resume\Api\Data
  */
 interface ResumeSearchResultsInterface extends \Magento\Framework\Api\SearchResultsInterface
 {

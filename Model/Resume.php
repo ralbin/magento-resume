@@ -11,7 +11,7 @@ class Resume extends AbstractModel implements ResumeInterface {
 
     protected function _construct()
     {
-        $this->_inti('RussellAlbin\Resume\Model\ResourceModel\Resume');
+        $this->_init('RussellAlbin\Resume\Model\ResourceModel\Resume');
     }
 
     /**
