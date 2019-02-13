@@ -84,6 +84,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
         /**
          * Resume table
          * entity_id
+         * description
          * firstname
          * lastname
          * email

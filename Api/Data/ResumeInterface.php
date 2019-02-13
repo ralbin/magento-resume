@@ -12,6 +12,7 @@ interface ResumeInterface
     /**
      * Main Table resume
      * entity_id
+     * description
      * firstname
      * lastname
      * email
@@ -21,6 +22,7 @@ interface ResumeInterface
      */
     const TABLE_NAME    = 'resume';
     const ENTITY_ID     = 'entity_id';
+    const DESCRIPTION   = 'description';
     const FIRSTNAME     = 'firstname';
     const LASTNAME      = 'lastname';
     const EMAIL         = 'email';
@@ -44,6 +46,16 @@ interface ResumeInterface
      */
     public function getEntityId();
 
+    /**
+     * @return string
+     */
+    public function getDescription();
+
+    /**
+     * @param $description
+     * @return string
+     */
+    public function setDescription($description);
     /**
      * @param $firstname
      * @return mixed
