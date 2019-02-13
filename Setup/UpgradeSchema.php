@@ -178,7 +178,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
     /**
      * @param $setup
      */
-    private function createExperienceTable($setup)
+    private function createExperienceTable(SchemaSetupInterface $setup)
     {
         /**
          *  * Table experience
@@ -189,52 +189,52 @@ class UpgradeSchema implements UpgradeSchemaInterface
          * job_description text
          * start_date datetime
          * end_date datetime nullable
-
+        */
         $resumeTable = $setup->getConnection()
             ->newTable($setup->getTable(ResumeInterface::TABLE_NAME))
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::ENTITY_ID,
                 \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
                 null,
                 ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],
                 'Resume ID'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::FIRSTNAME,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 24,
                 ['nullable' => false],
                 'Resume'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::LASTNAME,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 24,
                 ['nullable' => false],
                 'Last Name'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::EMAIL,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 255,
                 ['nullable' => false],
                 'Email'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::PHONE,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 15,
                 ['nullable' => false],
                 'PHone max 15 characters format (xxx)xxx-xxxx'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::OBJECTIVE,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 '64k',
                 ['nullable' => true],
                 'Objective'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::SKILLS,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 '64k',
@@ -257,6 +257,6 @@ class UpgradeSchema implements UpgradeSchemaInterface
             )
             ->setComment('Main Resume Table');
         $setup->getConnection->createTable($resumeTable);
-        */
+
     }
 }

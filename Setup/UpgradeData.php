@@ -5,8 +5,8 @@ namespace RussellAlbin\Resume\Setup;
 use Magento\Framework\Setup\ModuleContextInterface;
 use Magento\Framework\Setup\ModuleDataSetupInterface;
 use Magento\Framework\Setup\UpgradeDataInterface;
-use RussellAlbin\Resume\Api\Data\ResumeInterface;
 use Psr\Log\LoggerInterface;
+use RussellAlbin\Resume\Api\Data\ResumeInterface;
 
 /**
  * Class UpgradeData
@@ -50,6 +50,9 @@ class UpgradeData implements UpgradeDataInterface
         $setup->endSetup();
     }
 
+    /**
+     * @return array
+     */
     private function getResumeRecords()
     {
         $records = [

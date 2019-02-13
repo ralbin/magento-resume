@@ -115,7 +115,7 @@ class ResumeRepository implements ResumeRepositoryInterface
         if (!$resume->getId()) {
             throw NoSuchEntityException::singleField('entity_id', $resumeId);
         }
-        return $resumeId;
+        return $resume;
     }
     /**
      * {@inheritdoc}

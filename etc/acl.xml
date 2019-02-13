@@ -6,7 +6,11 @@
                 <resource id="Magento_Backend::stores">
                     <resource id="Magento_Backend::stores_settings">
                         <resource id="Magento_Config::config">
-                            <resource id="RussellAlbin_Resume::config_resume" title="Resume Section" />
+                            <resource id="RussellAlbin_Resume::config_resume" title="Resume Section" sortOrder="40" />
+                            <resource id="RussellAlbin_Resume::config" title="Resume Configuration" sortOrder="50" />
+                            <resource id="RussellAlbin_Resume::manage" title="Resume Manage" sortOrder="60" />
+                            <resource id="RussellAlbin_Resume::view" title="Resume View" sortOrder="70" />
+                            <resource id="RussellAlbin_Resume::edit" title="Resume Edit" sortOrder="80" />
                         </resource>
                     </resource>
                 </resource>

@@ -43,7 +43,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function setEntityId($entity_id)
     {
-        $this->setData(self::ENTITY_ID, $entity_id);
+        return $this->setData(self::ENTITY_ID, $entity_id);
     }
 
     /**
@@ -63,7 +63,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function setDescription($description)
     {
-        $this->setData(self::DESCRIPTION, $description);
+        return $this->setData(self::DESCRIPTION, $description);
     }
 
     /**
@@ -72,7 +72,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function getFirstname()
     {
-        $this->getData(self::FIRSTNAME);
+        return $this->getData(self::FIRSTNAME);
     }
 
     /**
@@ -81,7 +81,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function setFirstname($firstname)
     {
-        $this->setData(self::FIRSTNAME, $firstname);
+        return $this->setData(self::FIRSTNAME, $firstname);
     }
 
     /**
@@ -90,7 +90,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function getLastname()
     {
-        $this->getData(self::LASTNAME);
+        return $this->getData(self::LASTNAME);
     }
 
     /**
@@ -99,7 +99,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function setLastname($lastname)
     {
-        $this->setData(self::LASTNAME, $lastname);
+        return $this->setData(self::LASTNAME, $lastname);
     }
 
     /**
@@ -108,7 +108,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function getEmail()
     {
-        $this->getData(self::EMAIL);
+        return $this->getData(self::EMAIL);
     }
 
     /**
@@ -117,7 +117,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function setEmail($email)
     {
-        $this->setData(self::EMAIL, $email);
+        return $this->setData(self::EMAIL, $email);
     }
 
     /**
@@ -126,7 +126,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function getPhone()
     {
-        $this->getData(self::PHONE);
+        return $this->getData(self::PHONE);
     }
 
     /**
@@ -135,7 +135,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function setPhone($phone)
     {
-        $this->setData(self::PHONE, $phone);
+        return $this->setData(self::PHONE, $phone);
     }
 
     /**
@@ -144,7 +144,7 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function getSkills()
     {
-        $this->getData(self::SKILLS);
+        return $this->getData(self::SKILLS);
     }
 
     /**
@@ -153,6 +153,6 @@ class Resume extends AbstractModel implements ResumeInterface
      */
     public function setSkills($skills)
     {
-        $this->setData(self::SKILLS, $skills);
+        return $this->setData(self::SKILLS, $skills);
     }
 }
