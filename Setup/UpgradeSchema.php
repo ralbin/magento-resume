@@ -35,51 +35,67 @@
  * entity_id int(11)
  * description varchar(255)
  */
-use Magento\Framework\Exception\LocalizedException;
+namespace RussellAlbin\Resume\Setup;
+
 use Magento\Framework\Setup\ModuleContextInterface;
-use Magento\Framework\Setup\ModuleDataSetupInterface;
-use Magento\Framework\Setup\UpgradeDataInterface;
+use Magento\Framework\Setup\SchemaSetupInterface;
+use Magento\Framework\Setup\UpgradeSchemaInterface;
+use Psr\Log\LoggerInterface;
 use RussellAlbin\Resume\Api\Data\ResumeInterface;
+
 /**
  * Class UpgradeSchema
  */
 class UpgradeSchema implements UpgradeSchemaInterface
 {
     /**
-     * @param ModuleDataSetupInterface $setup
+     * @var LoggerInterface
+     */
+    protected $logger;
+
+    /**
+     * UpgradeSchema constructor.
+     * @param LoggerInterface $logger
+     */
+    public function __construct(
+        LoggerInterface $logger
+    ) {
+        $this->logger = $logger;
+    }
+
+    /**
+     * @param SchemaSetupInterface $setup
      * @param ModuleContextInterface $context
      */
-    public function upgrade(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    public function upgrade(SchemaSetupInterface $setup, ModuleContextInterface $context)
     {
         $setup->startSetup();
 
         // Create our tables needed for the resume
-        if (version_compare($context->getVersion(), '1.0.1', '<')) {
-            $this->oneZeroOne($setup);
+        if (version_compare($context->getVersion(), '1.0.2', '<')) {
+            $this->oneZeroTwo($setup);
         }
 
         $setup->endSetup();
     }
 
     /**
-     * Create our 5 tables to manage our resume attributes
+     * Create our main Resume table to manage our resume attributes
      * @param SchemaSetupInterface $setup
      */
-    private function oneZeroOne(SchemaSetupInterface $setup)
+    private function oneZeroTwo(SchemaSetupInterface $setup)
     {
-        try{
+        try {
             $this->createResumeTable($setup);
-            //$this->createExperienceTable($setup);
-        }catch (\Exception $e){
-
+        } catch (\Exception $e) {
+            $this->logger->critical($e->getMessage());
         }
     }
 
     /**
-     * Resume Table
-     * @param $setup
+     * @param SchemaSetupInterface $setup
      */
-    private function createResumeTable($setup)
+    private function createResumeTable(SchemaSetupInterface $setup)
     {
         /**
          * Resume table
@@ -92,51 +108,59 @@ class UpgradeSchema implements UpgradeSchemaInterface
          * objective
          * skills
          */
-        $resumeTable = $setup->getConnection()
+        try {
+            $resumeTable = $setup->getConnection()
             ->newTable($setup->getTable(ResumeInterface::TABLE_NAME))
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::ENTITY_ID,
                 \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
                 null,
                 ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],
                 'Resume ID'
             )
-            ->newColumn(
+            ->addColumn(
+                ResumeInterface::DESCRIPTION,
+                \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
+                255,
+                ['nullable' => false],
+                'Resume Description'
+            )
+            ->addColumn(
                 ResumeInterface::FIRSTNAME,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 24,
                 ['nullable' => false],
                 'Resume'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::LASTNAME,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 24,
                 ['nullable' => false],
                 'Last Name'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::EMAIL,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 255,
                 ['nullable' => false],
                 'Email'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::PHONE,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 15,
                 ['nullable' => false],
                 'PHone max 15 characters format (xxx)xxx-xxxx'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::OBJECTIVE,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 '64k',
                 ['nullable' => true],
                 'Objective'
             )
-            ->newColumn(
+            ->addColumn(
                 ResumeInterface::SKILLS,
                 \Magento\Framework\DB\Ddl\Table::TYPE_TEXT,
                 '64k',
@@ -144,9 +168,16 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 'Skills'
             )
             ->setComment('Main Resume Table');
-        $setup->getConnection->createTable($resumeTable);
+
+            $setup->getConnection()->createTable($resumeTable);
+        } catch (\Exception $e) {
+            $this->logger->critical($e->getMessage());
+        }
     }
 
+    /**
+     * @param $setup
+     */
     private function createExperienceTable($setup)
     {
         /**
@@ -228,5 +259,4 @@ class UpgradeSchema implements UpgradeSchemaInterface
         $setup->getConnection->createTable($resumeTable);
         */
     }
-
 }
