@@ -11,7 +11,7 @@ interface ResumeSearchResultsInterface extends \Magento\Framework\Api\SearchResu
     /**
      * Get Resume list.
      * @api
-     * @return \RussellAlbin\Resume\Api\Data\Resumenterface[]
+     * @return \RussellAlbin\Resume\Api\Data\ResumeInterface[]
      */
     public function getItems();
 

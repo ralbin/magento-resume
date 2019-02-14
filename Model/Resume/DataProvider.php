@@ -23,6 +23,9 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
     }
 
+    /**
+     * @return array
+     */
     public function getData()
     {
         if (isset($this->loadedData)) {

@@ -197,7 +197,7 @@ class UpgradeSchema implements UpgradeSchemaInterface
                 \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,
                 null,
                 ['identity' => true, 'unsigned' => true, 'nullable' => false, 'primary' => true],
-                'Resume ID'
+                'Entity ID'
             )
             ->addColumn(
                 ResumeInterface::FIRSTNAME,
