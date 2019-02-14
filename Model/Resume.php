@@ -155,4 +155,22 @@ class Resume extends AbstractModel implements ResumeInterface
     {
         return $this->setData(self::SKILLS, $skills);
     }
+
+    /**
+     * Retrieve the objective
+     * @return string|null
+     */
+    public function getObjective()
+    {
+        return $this->getData(self::OBJECTIVE);
+    }
+
+    /**
+     * @param $objective
+     * @return $this|string
+     */
+    public function setObjective($objective)
+    {
+        return $this->setData(self::OBJECTIVE, $objective);
+    }
 }

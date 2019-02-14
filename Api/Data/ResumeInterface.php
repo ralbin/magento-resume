@@ -110,4 +110,15 @@ interface ResumeInterface
      * @return mixed
      */
     public function getSkills();
+
+    /**
+     * @return mixed
+     */
+    public function getObjective();
+
+    /**
+     * @param $objective
+     * @return mixed
+     */
+    public function setObjective($objective);
 }
