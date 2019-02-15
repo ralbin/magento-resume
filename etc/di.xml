@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- Resume -->
+    <preference for="RussellAlbin\Resume\Api\Data\ResumeSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="RussellAlbin\Resume\Api\Data\ResumeInterface" type="RussellAlbin\Resume\Model\Resume" />
+    <preference for="RussellAlbin\Resume\Api\ResumeRepositoryInterface" type="RussellAlbin\Resume\Model\ResumeRepository" />
+    <!-- Experience -->
+    <preference for="RussellAlbin\Resume\Api\Data\ExperienceSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+    <preference for="RussellAlbin\Resume\Api\Data\ExperienceInterface" type="RussellAlbin\Resume\Model\Experience" />
+    <preference for="RussellAlbin\Resume\Api\ExperienceRepositoryInterface" type="RussellAlbin\Resume\Model\ExperienceRepository" />
+
+
+    <!-- Resume -->
+    <virtualType name="RussellAlbin\Resume\Model\ResourceModel\Resume\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">resume</argument>
+            <argument name="resourceModel" xsi:type="string">RussellAlbin\Resume\Model\ResourceModel\Resume</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="russellalbin_resume_grid_data_source" xsi:type="string">RussellAlbin\Resume\Model\ResourceModel\Resume\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- End Resume -->
+    <!-- Experience -->
+    <virtualType name="RussellAlbin\Resume\Model\ResourceModel\Experience\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">experience</argument>
+            <argument name="resourceModel" xsi:type="string">RussellAlbin\Resume\Model\ResourceModel\Experience</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="russellalbin_experience_grid_data_source" xsi:type="string">RussellAlbin\Resume\Model\ResourceModel\Experience\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <!-- End Experience -->
+</config>

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route url="/V1/resume" method="POST">
+        <service class="RussellAlbin\Resume\Api\ResumeRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="RussellAlbin_Resume::edit"/>
+        </resources>
+    </route>
+    <route url="/V1/resume/:resumeId" method="GET">
+        <service class="RussellAlbin\Resume\Api\ResumeRepositoryInterface" method="get"/>
+        <resources>
+            <resource ref="RussellAlbin_Resume::view"/>
+        </resources>
+    </route>
+    <route url="/V1/resume" method="PUT">
+        <service class="RussellAlbin\Resume\Api\ResumeRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="RussellAlbin_Resume::edit"/>
+        </resources>
+    </route>
+    <route url="/V1/resume/:resumetId" method="DELETE">
+        <service class="RussellAlbin\Resume\Api\ResumeRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="RussellAlbin_Resume::edit"/>
+        </resources>
+    </route>
+    <route url="/V1/resume/search" method="GET">
+        <service class="RussellAlbin\Resume\Api\ResumeRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="RussellAlbin_Resume::view"/>
+        </resources>
+    </route>
+</routes>
