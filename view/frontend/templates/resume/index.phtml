@@ -4,10 +4,10 @@
  */
 
 // Get our resume, that comes from our xml file
-$xml = $block->getResumeXml();
+$xml = $block->getResumeData();
 
 ?>
-<h1>Personal Information</h1>
+<h1>Some Personal Information</h1>
 <div>Name: <?php echo $xml->personal_information->full_name; ?></div>
 <div>Email: <?php echo $xml->personal_information->email; ?></div>
 <div>Cell Phone: <?php echo $xml->personal_information->cell_phone; ?></div>

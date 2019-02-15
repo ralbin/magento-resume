@@ -1,16 +1,26 @@
 <?php
 namespace RussellAlbin\Resume\Block;
-class Resume extends \Magento\Framework\View\Element\Template
+
+use RussellAlbin\Resume\Api\Data\ResumeInterface;
+
+class Resume extends AbstractResume
 {
+    /**
+     * @var ResumeInterface
+     */
+    protected $resume;
 
-    public function getResumeXml()
-    {
-        $url = $this->getViewFileUrl('RussellAlbin_Resume::xml/resume.xml');
-        $xml_file = file_get_contents($url, FILE_TEXT);
-
-        // create a simplexml object from the contents of the current file
-        $xml = simplexml_load_string($xml_file);
-        return $xml;
+    public function __construct(
+        \Magento\Framework\View\Element\Template\Context $context,
+        ResumeInterface $resume,
+        array $data = []
+    ) {
+        $this->resume = $resume;
+        parent::__construct($context, $data);
     }
 
+    public function getResumeData()
+    {
+        $this->getResumeXml();
+    }
 }
