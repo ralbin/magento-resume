@@ -89,7 +89,7 @@ abstract class AbstractResume extends Template
     protected function getResumeDb()
     {
         //$filter = $this->filter;
-        //$filter->setField(\SecondSwing\ClubFinder\Model\Wishlist::WISHLIST_EMAIL);
+        //$filter->setField(\RussellAlbin\SomeModule\Model\Wishlist::WISHLIST_EMAIL);
         //$filter->setValue($wishlistId);
         //$filter->setConditionType('eq');
         //$filter_group   = $this->filterGroup->setData('filters', [$filter]);
