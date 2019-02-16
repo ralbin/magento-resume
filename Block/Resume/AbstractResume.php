@@ -1,9 +1,13 @@
 <?php
-namespace RussellAlbin\Resume\Block;
+namespace RussellAlbin\Resume\Block\Resume;
 
 use Magento\Framework\View\Element\Template;
 use RussellAlbin\Resume\Api\Data\ResumeInterface;
 
+/**
+ * Class AbstractResume
+ * @package RussellAlbin\Resume\Block\Resume
+ */
 abstract class AbstractResume extends Template
 {
 
@@ -12,12 +16,13 @@ abstract class AbstractResume extends Template
      */
     protected $resume;
 
+    protected $resumeSearchResults;
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         ResumeInterface $resume,
         array $data = []
     ) {
-        $this->resume = $resume;
+        $this->resume               = $resume;
         parent::__construct($context, $data);
     }
 
@@ -39,5 +44,10 @@ abstract class AbstractResume extends Template
         $this->resume->setSkills($xml->personal_information->skills);
         $this->resume->setObjective($xml->personal_information->objective);
         return $this->resume;
+    }
+
+    protected function getResumeDb()
+    {
+       return $this->resume;
     }
 }

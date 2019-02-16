@@ -1,7 +1,10 @@
 <?php
-namespace RussellAlbin\Resume\Block;
-
-class Resume extends AbstractResume
+namespace RussellAlbin\Resume\Block\Resume;
+/**
+ * Class Xml
+ * @package RussellAlbin\Resume\Block
+ */
+class Xml extends AbstractResume
 {
 
     /**

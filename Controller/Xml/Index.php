@@ -1,6 +1,6 @@
 <?php
 
-namespace RussellAlbin\Resume\Controller\Index;
+namespace RussellAlbin\Resume\Controller\Xml;
 
 /**
  * Resume main view controller

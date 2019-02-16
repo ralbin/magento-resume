@@ -22,7 +22,8 @@ class PageBlockHtmlTopmenuBethtmlBeforeObserver implements ObserverInterface
     /**
      * Top menu item text config path
      */
-    const XML_PATH_TOP_MENU_ITEM_TEXT = 'russellalbin/top_menu/item_text';
+    const XML_PATH_TOP_MENU_ITEM_TEXT_DB = 'russellalbin/top_menu/item_text_db';
+    const XML_PATH_TOP_MENU_ITEM_TEXT_XML = 'russellalbin/top_menu/item_text_xml';
 
     /**
      * @var \Magento\Framework\UrlInterface
@@ -66,12 +67,22 @@ class PageBlockHtmlTopmenuBethtmlBeforeObserver implements ObserverInterface
 
         $tree = $menu->getTree();
         $data = [
-            'name'      => $this->_scopeConfig->getValue(static::XML_PATH_TOP_MENU_ITEM_TEXT, \Magento\Store\Model\ScopeInterface::SCOPE_STORE),
-            'id'        => 'russellalbin-resume',
-            'url'       => $this->_url->getUrl('resume'),
+            'name'      => $this->_scopeConfig->getValue(static::XML_PATH_TOP_MENU_ITEM_TEXT_DB, \Magento\Store\Model\ScopeInterface::SCOPE_STORE),
+            'id'        => 'russellalbin-resume-db',
+            'url'       => $this->_url->getUrl('resume/db'),
             'is_active' => ($block->getRequest()->getModuleName() == 'resume'),
         ];
         $node = new Node($data, 'id', $tree, $menu);
         $menu->addChild($node);
+
+        $data = [
+            'name'      => $this->_scopeConfig->getValue(static::XML_PATH_TOP_MENU_ITEM_TEXT_XML, \Magento\Store\Model\ScopeInterface::SCOPE_STORE),
+            'id'        => 'russellalbin-resume-xml',
+            'url'       => $this->_url->getUrl('resume/xml'),
+            'is_active' => ($block->getRequest()->getModuleName() == 'resume'),
+        ];
+        $node = new Node($data, 'id', $tree, $menu);
+        $menu->addChild($node);
+
     }
 }

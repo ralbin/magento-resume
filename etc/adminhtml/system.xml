@@ -15,13 +15,18 @@
                     <label>Display Resume Link</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="item_text" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Link Text</label>
+                <field id="item_text_db" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Link DB Text</label>
                     <depends>
                         <field id="show_item">1</field>
                     </depends>
                 </field>
-            </group>
+                <field id="item_text_xml" type="text" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Link XML Text</label>
+                    <depends>
+                        <field id="show_item">1</field>
+                    </depends>
+                </field>            </group>
         </section>
     </system>
 </config>

@@ -4,7 +4,8 @@
         <russellalbin>
             <top_menu>
                 <show_item>1</show_item>
-                <item_text>Resume</item_text>
+                <item_text_db>Resume DB</item_text_db>
+                <item_text_xml>Resume XML</item_text_xml>
             </top_menu>
         </russellalbin>
     </default>
