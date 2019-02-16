@@ -4,21 +4,22 @@
  */
 
 // Get our resume, that comes from our xml file
-$xml = $block->getResumeData();
+/** @var $resume RussellAlbin\Resume\Api\Data\ResumeInterface */
+$resume = $block->getResumeData();
 
 ?>
 <h1>Some Personal Information</h1>
-<div>Name: <?php echo $xml->personal_information->full_name; ?></div>
-<div>Email: <?php echo $xml->personal_information->email; ?></div>
-<div>Cell Phone: <?php echo $xml->personal_information->cell_phone; ?></div>
-<div>Magento URL: <?php echo $xml->personal_information->magento_url; ?></div>
-<div>LinkedIn URL: <?php echo $xml->personal_information->linkedin_url; ?></div>
-<div>Skills: <?php echo $xml->personal_information->skills; ?></div>
-<div>Objective: <?php echo $xml->personal_information->objective; ?></div>
+<div>Name: <?= $resume->getFirstname() . ' ' . $resume->getLastname(); ?></div>
+<div>Email: <?= $resume->getEmail(); ?></div>
+<div>Cell Phone: <?= $resume->getPhone(); ?></div>
+<div>Magento URL: <?php /* $xml->personal_information->magento_url; */ ?></div>
+<div>LinkedIn URL: <?php /* $xml->personal_information->linkedin_url; */ ?></div>
+<div>Skills: <?= $resume->getSkills(); ?></div>
+<div>Objective: <?= $resume->getObjective(); ?></div>
 <hr>
 <h2>Certifications</h2>
 
-    <?php foreach($xml->certifications as $_certification): ?>
+    <?php /* foreach($xml->certifications as $_certification): ?>
         <?php foreach($_certification as $_items): ?>
         <div>
                 <h4><?php echo $_items->title; ?></h4>
@@ -39,6 +40,6 @@ $xml = $block->getResumeData();
         </div>
         <?php endforeach; ?>
 
-    <?php endforeach; ?>
+    <?php endforeach; */ ?>
 
 
