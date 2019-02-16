@@ -1,8 +1,12 @@
 <?php
 namespace RussellAlbin\Resume\Block\Resume;
 
+use Magento\Framework\Api\Filter;
+use Magento\Framework\Api\Search\FilterGroup;
+use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\View\Element\Template;
 use RussellAlbin\Resume\Api\Data\ResumeInterface;
+use RussellAlbin\Resume\Api\ResumeRepositoryInterface;
 
 /**
  * Class AbstractResume
@@ -16,13 +20,49 @@ abstract class AbstractResume extends Template
      */
     protected $resume;
 
-    protected $resumeSearchResults;
+    /**
+     * @var CollectionFactory
+     */
+    private $collectionFactory;
+    /**
+     * @var Filter
+     */
+    private $filter;
+    /**
+     * @var FilterGroup
+     */
+    private $filterGroup;
+    /**
+     * @var SearchCriteriaInterface
+     */
+    private $searchCriteria;
+    /**
+     * @var SearchResultFactory
+     */
+    private $searchResultFactory;
+
+    private $resumeRepository;
+
+    /**
+     * AbstractResume constructor.
+     * @param Template\Context $context
+     * @param ResumeInterface $resume
+     * @param Filter $filter
+     * @param SearchCriteriaInterface $searchCriteria
+     * @param array $data
+     */
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         ResumeInterface $resume,
+        Filter $filter,
+        SearchCriteriaInterface $searchCriteria,
+        ResumeRepositoryInterface $resumeRepository,
         array $data = []
     ) {
-        $this->resume               = $resume;
+        $this->resume                   = $resume;
+        $this->filter                   = $filter;
+        $this->searchCriteria           = $searchCriteria;
+        $this->resumeRepository         = $resumeRepository;
         parent::__construct($context, $data);
     }
 
@@ -48,6 +88,19 @@ abstract class AbstractResume extends Template
 
     protected function getResumeDb()
     {
-       return $this->resume;
+        //$filter = $this->filter;
+        //$filter->setField(\SecondSwing\ClubFinder\Model\Wishlist::WISHLIST_EMAIL);
+        //$filter->setValue($wishlistId);
+        //$filter->setConditionType('eq');
+        //$filter_group   = $this->filterGroup->setData('filters', [$filter]);
+        //$search         = $this->searchCriteria->setFilterGroups([$filter_group]);
+        $search         = $this->searchCriteria;
+        /* @var $search \RussellAlbin\Resume\Model\ResumeRepository */
+        $results        = $this->resumeRepository->getList($search);
+        foreach ($results->getItems() as $_item)
+        {
+            return $_item;
+            break;
+        }
     }
 }
